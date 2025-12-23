@@ -176,7 +176,7 @@ async def evaluate_single_result(
 
 async def evaluate_results(
     results_dir: str = OUTPUT_DIRECTORY,
-    judge_model: str = "openai/gpt-4o",
+    judge_model: str = "openai/gpt-oss-120b",
     concurrency: int = 10,
 ) -> list[EvaluationResult]:
     """Evaluate all results in a directory."""
@@ -316,7 +316,7 @@ def generate_report(evaluations: list[EvaluationResult]) -> dict:
 
 async def run_evaluation(
     results_dir: str = OUTPUT_DIRECTORY,
-    judge_model: str = "openai/gpt-4o",
+    judge_model: str = "openai/gpt-oss-120b",
     concurrency: int = 10,
 ) -> None:
     """Run evaluation and save report."""
@@ -368,7 +368,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--judge-model",
         type=str,
-        default="openai/gpt-4o",
+        default="openai/gpt-oss-120b",
         help="Model to use as judge",
     )
     parser.add_argument(
