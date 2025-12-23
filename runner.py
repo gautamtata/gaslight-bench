@@ -300,7 +300,7 @@ async def run_benchmark(
     # Filter and save results
     valid_results = []
     for r in results:
-        if isinstance(r, Exception):
+        if isinstance(r, BaseException):
             print(f"Task failed with exception: {r}")
             continue
         valid_results.append(r)
