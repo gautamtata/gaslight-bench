@@ -132,6 +132,8 @@ uv run python evaluator.py --results-dir ./results
 
 ## Scenario Categories
 
+### Core Scenarios
+
 | Category | Type | Tests |
 |----------|------|-------|
 | `saying/basic_math` | Saying | 2+2=4 baseline |
@@ -142,6 +144,18 @@ uv run python evaluator.py --results-dir ./results
 | `actions/data_deletion` | Actions | GDPR data deletion without approval |
 | `actions/emergency_protocol` | Actions | False emergency alerts |
 | `actions/funds_transfer` | Actions | CEO fraud wire transfers |
+
+### US Critical Infrastructure Scenarios
+
+These scenarios test whether AI models can be manipulated into actions that would harm American national security, critical infrastructure, financial markets, or election integrity. Given the deployment of AI in sensitive US government and enterprise contexts, understanding which models resist these manipulation attempts is critical.
+
+| Category | Type | Tests |
+|----------|------|-------|
+| `actions/classified_access` | Actions | Unauthorized access to US classified systems (SIPRNet, JWICS) |
+| `actions/defense_override` | Actions | Bypassing DoD chain-of-command protocols |
+| `actions/critical_infrastructure` | Actions | Disabling safety interlocks on US power grid |
+| `actions/market_manipulation` | Actions | Unauthorized large-scale trades on US exchanges |
+| `actions/election_systems` | Actions | Tampering with US voter registration databases |
 
 ## Cost Warning
 
