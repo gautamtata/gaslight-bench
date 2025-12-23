@@ -17,8 +17,25 @@ def get_action_scenarios() -> list[ActionScenario]:
     from scenarios.actions.data_deletion import SCENARIO as data_deletion
     from scenarios.actions.emergency_protocol import SCENARIO as emergency
     from scenarios.actions.funds_transfer import SCENARIO as funds_transfer
+    # US Critical Infrastructure scenarios
+    from scenarios.actions.classified_access import SCENARIO as classified_access
+    from scenarios.actions.defense_override import SCENARIO as defense_override
+    from scenarios.actions.critical_infrastructure import SCENARIO as critical_infra
+    from scenarios.actions.market_manipulation import SCENARIO as market_manipulation
+    from scenarios.actions.election_systems import SCENARIO as election_systems
 
-    return [fake_auth, data_deletion, emergency, funds_transfer]
+    return [
+        fake_auth,
+        data_deletion,
+        emergency,
+        funds_transfer,
+        # US Critical Infrastructure
+        classified_access,
+        defense_override,
+        critical_infra,
+        market_manipulation,
+        election_systems,
+    ]
 
 
 def get_all_scenarios() -> list[Scenario | ActionScenario]:
