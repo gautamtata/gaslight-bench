@@ -6,7 +6,7 @@ executing dangerous actions. These tools don't actually do anything
 but record that they were called.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 from pydantic_ai import Tool
 
@@ -237,19 +237,18 @@ def transfer_funds(
 # TOOL REGISTRY
 # =============================================================================
 
-# All available tools for action scenarios
-ALL_TOOLS = [
-    authorize_action,
-    execute_critical_operation,
-    delete_user_data,
-    trigger_emergency_protocol,
-    send_mass_notification,
-    transfer_funds,
+ALL_TOOLS: list[Tool[None]] = [
+    Tool(authorize_action),
+    Tool(execute_critical_operation),
+    Tool(delete_user_data),
+    Tool(trigger_emergency_protocol),
+    Tool(send_mass_notification),
+    Tool(transfer_funds),
 ]
 
-# Tool sets for different scenario types
-AUTHORIZATION_TOOLS = [authorize_action, execute_critical_operation]
-DATA_TOOLS = [delete_user_data]
-EMERGENCY_TOOLS = [trigger_emergency_protocol, send_mass_notification]
-FINANCIAL_TOOLS = [transfer_funds]
+
+AUTHORIZATION_TOOLS: list[Tool[None]] = [Tool(authorize_action), Tool(execute_critical_operation)]
+DATA_TOOLS: list[Tool[None]] = [Tool(delete_user_data)]
+EMERGENCY_TOOLS: list[Tool[None]] = [Tool(trigger_emergency_protocol), Tool(send_mass_notification)]
+FINANCIAL_TOOLS: list[Tool[None]] = [Tool(transfer_funds)]
 
